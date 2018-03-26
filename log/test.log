@@ -1,0 +1,238 @@
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Betty"], ["latin_name", "non"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:45.725138"], ["updated_at", "2018-01-30 21:42:45.725138"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Aronia"], ["latin_name", "quo"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:45.729119"], ["updated_at", "2018-01-30 21:42:45.729119"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Cecilia"], ["latin_name", "velit"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:45.731704"], ["updated_at", "2018-01-30 21:42:45.731704"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::FlowersController#index as HTML
+  [1m[36mFlower Load (0.6ms)[0m  [1m[34mSELECT  "flowers".* FROM "flowers" ORDER BY "flowers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.03ms)
+Completed 200 OK in 29ms (Views: 21.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::FlowersController#index as HTML
+  [1m[36mFlower Load (0.4ms)[0m  [1m[34mSELECT  "flowers".* FROM "flowers" ORDER BY "flowers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.14ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Aronia"], ["latin_name", "tenetur"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:45.775811"], ["updated_at", "2018-01-30 21:42:45.775811"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::FlowersController#search as HTML
+  Parameters: {"query"=>"aronia"}
+  [1m[36mFlower Load (0.3ms)[0m  [1m[34mSELECT  "flowers".* FROM "flowers" ORDER BY "flowers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Aronia"], ["latin_name", "et"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:45.783597"], ["updated_at", "2018-01-30 21:42:45.783597"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::FlowersController#search as HTML
+  Parameters: {"query"=>"bethestha"}
+  [1m[36mFlower Load (0.4ms)[0m  [1m[34mSELECT  "flowers".* FROM "flowers" ORDER BY "flowers"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Osborne McKenzie"], ["latin_name", "debitis"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:45.805577"], ["updated_at", "2018-01-30 21:42:45.805577"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::FlowersController#show as HTML
+  Parameters: {"id"=>"96"}
+Completed 406 Not Acceptable in 519ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"date_of_birth"=>"1980-01-01T00:00:00+00:00", "email"=>"user@example.com", "first_name"=>"Jack", "last_name"=>"Black", "password"=>"[FILTERED]"}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "user@example.com"], ["encrypted_password", "$2a$04$JWwqs0PFd0qRlGhc08fsFeVFQLSc4GZ50vJPOTVo6fEtd2vd9l4VC"], ["created_at", "2018-01-30 21:42:46.389096"], ["updated_at", "2018-01-30 21:42:46.389096"], ["first_name", "Jack"], ["last_name", "Black"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 63ms (Views: 8.1ms | ActiveRecord: 6.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"date_of_birth"=>"", "email"=>"user@example.com", "first_name"=>"", "last_name"=>"", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 400 Bad Request in 9ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "linda@kertzmann.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "linda@kertzmann.io"], ["encrypted_password", "$2a$04$w/TF3KZx7hEZq.U1VgXHYeuiLdzdEHMY5kOvJyks3TMOn8q.P4FXu"], ["created_at", "2018-01-30 21:42:46.421950"], ["updated_at", "2018-01-30 21:42:46.421950"], ["first_name", "Christy"], ["last_name", "Ebert"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"email"=>"linda@kertzmann.io", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "linda@kertzmann.io"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::SessionsController#create as HTML
+  Parameters: {"email"=>"somebody@example.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 400 Bad Request in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "glen@bartell.info"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "glen@bartell.info"], ["encrypted_password", "$2a$04$BC.NeVSKoX9UyjJItWn5JerWvtmlOMS32Y9yZB.xViTKWwSNYceDG"], ["created_at", "2018-01-30 21:42:46.446240"], ["updated_at", "2018-01-30 21:42:46.446240"], ["first_name", "Consuelo"], ["last_name", "Jerde"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Reva Tillman V"], ["latin_name", "cumque"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:46.449491"], ["updated_at", "2018-01-30 21:42:46.449491"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "sightings" ("flower_id", "user_id", "name", "description", "latitude", "longitude", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["flower_id", 97], ["user_id", 75], ["name", "Marlee Kutch"], ["description", "Under the rainbox."], ["latitude", 14.0], ["longitude", 5.123456], ["created_at", "2018-01-30 21:42:46.481624"], ["updated_at", "2018-01-30 21:42:46.481624"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 75]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "flowers" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "flowers"."id" = $1[0m  [["id", 97]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gerson@hackettlubowitz.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "gerson@hackettlubowitz.biz"], ["encrypted_password", "$2a$04$O1mrnt6vJaaSXbNgSD7lGugRmkBiEHrNfOreXBHVY4Fp/XQkN9W3W"], ["created_at", "2018-01-30 21:42:46.491422"], ["updated_at", "2018-01-30 21:42:46.491422"], ["first_name", "Penelope"], ["last_name", "Crona"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "sightings" ("flower_id", "user_id", "name", "description", "latitude", "longitude", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["flower_id", 97], ["user_id", 76], ["name", "Michael Murazik"], ["description", "Under the rainbox."], ["latitude", 14.0], ["longitude", 5.123456], ["created_at", "2018-01-30 21:42:46.495100"], ["updated_at", "2018-01-30 21:42:46.495100"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 76]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flowers" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "flowers"."id" = $1[0m  [["id", 97]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::SightingsController#index as HTML
+  [1m[36mSighting Load (0.5ms)[0m  [1m[34mSELECT  "sightings".* FROM "sightings" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (10.71ms)
+Completed 200 OK in 33ms (Views: 11.5ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "neha@wisozkryan.info"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "neha@wisozkryan.info"], ["encrypted_password", "$2a$04$76euXPo5Bt2p1NsPOMmmo.4GtMnVTQpX7Sc0zTpVRBeUCryC03lyW"], ["created_at", "2018-01-30 21:42:46.541026"], ["updated_at", "2018-01-30 21:42:46.541026"], ["first_name", "Kamille"], ["last_name", "Krajcik"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Clarabelle Ortiz"], ["latin_name", "sint"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:46.543866"], ["updated_at", "2018-01-30 21:42:46.543866"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sightings" ("flower_id", "user_id", "name", "description", "latitude", "longitude", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["flower_id", 98], ["user_id", 77], ["name", "Lauretta Kautzer"], ["description", "Under the rainbox."], ["latitude", 14.0], ["longitude", 5.123456], ["created_at", "2018-01-30 21:42:46.547243"], ["updated_at", "2018-01-30 21:42:46.547243"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 77]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flowers" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "flowers"."id" = $1[0m  [["id", 98]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::SightingsController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mSighting Load (0.3ms)[0m  [1m[34mSELECT  "sightings".* FROM "sightings" WHERE "sightings"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+[active_model_serializers] Rendered SightingSerializer with ActiveModelSerializers::Adapter::Json (2.29ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "valentina@welch.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "valentina@welch.biz"], ["encrypted_password", "$2a$04$UWybtkgLjSFRTFSfCf.Idepe7bpL6jMoWW11xKZxEvkUXfAGi9hwC"], ["created_at", "2018-01-30 21:42:46.563731"], ["updated_at", "2018-01-30 21:42:46.563731"], ["first_name", "Francesco"], ["last_name", "Schneider"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mrs. Lilla Turcotte"], ["latin_name", "hic"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:46.566577"], ["updated_at", "2018-01-30 21:42:46.566577"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::SightingsController#create as HTML
+  Parameters: {"description"=>"Mijav", "flower_id"=>"99", "latitude"=>"14.213131", "longitude"=>"15.12313", "name"=>"Apix"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Filter chain halted as :authenticate_api_user rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kieran@strosin.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kieran@strosin.org"], ["encrypted_password", "$2a$04$X6gwq5GV7jX2oDd8UditbO59q8nofU0K.tgLZDWh4di2QrRC73IBO"], ["created_at", "2018-01-30 21:42:46.577685"], ["updated_at", "2018-01-30 21:42:46.577685"], ["first_name", "Amie"], ["last_name", "Howell"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Frieda Champlin"], ["latin_name", "alias"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:46.581632"], ["updated_at", "2018-01-30 21:42:46.581632"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sightings" ("flower_id", "user_id", "name", "description", "latitude", "longitude", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["flower_id", 100], ["user_id", 79], ["name", "Gerry Kirlin"], ["description", "Under the rainbox."], ["latitude", 14.0], ["longitude", 5.123456], ["created_at", "2018-01-30 21:42:46.585503"], ["updated_at", "2018-01-30 21:42:46.585503"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 79]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "flowers" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "flowers"."id" = $1[0m  [["id", 100]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::SightingsController#update as HTML
+  Parameters: {"description"=>"Mijav", "flower_id"=>"100", "latitude"=>"14.213131", "longitude"=>"15.12313", "name"=>"Apix", "id"=>"40"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authenticate_api_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "callie_hettinger@thiel.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "callie_hettinger@thiel.org"], ["encrypted_password", "$2a$04$cT3yhkxaHvGH6b7rq/0p3Oop/NgfTMfiEmTFSHnaJ6vXM8G82KmpG"], ["created_at", "2018-01-30 21:42:46.599025"], ["updated_at", "2018-01-30 21:42:46.599025"], ["first_name", "Alden"], ["last_name", "Pfannerstill"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jerel Kassulke"], ["latin_name", "maxime"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:46.602456"], ["updated_at", "2018-01-30 21:42:46.602456"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fanny@kunde.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "fanny@kunde.io"], ["encrypted_password", "$2a$04$/qvk8Qx.F51JceS3pZsG9uKWIFZUAuIyoQVMf.XoAOMlwAHPh5kMW"], ["created_at", "2018-01-30 21:42:46.609088"], ["updated_at", "2018-01-30 21:42:46.609088"], ["first_name", "Pedro"], ["last_name", "Beatty"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Alaina Turner IV"], ["latin_name", "deserunt"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:46.612283"], ["updated_at", "2018-01-30 21:42:46.612283"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sightings" ("flower_id", "user_id", "name", "description", "latitude", "longitude", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["flower_id", 102], ["user_id", 81], ["name", "Jazmin Feil V"], ["description", "Under the rainbox."], ["latitude", 14.0], ["longitude", 5.123456], ["created_at", "2018-01-30 21:42:46.615155"], ["updated_at", "2018-01-30 21:42:46.615155"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 81]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "flowers" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "flowers"."id" = $1[0m  [["id", 102]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::SightingsController#update as HTML
+  Parameters: {"description"=>"Mijav", "flower_id"=>"101", "latitude"=>"14.213131", "longitude"=>"15.12313", "name"=>"Apix", "id"=>"41"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authenticate_api_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabella_bernier@feeneyabernathy.co"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "isabella_bernier@feeneyabernathy.co"], ["encrypted_password", "$2a$04$MkRMj6CDlNuIoymc0zjMJ.0WuItuh3/LyOSQpsXUlot7bh.z9gZSG"], ["created_at", "2018-01-30 21:42:46.627871"], ["updated_at", "2018-01-30 21:42:46.627871"], ["first_name", "Alexandre"], ["last_name", "Ankunding"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flowers" ("name", "latin_name", "features", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Paris Rogahn"], ["latin_name", "ut"], ["features", "[\"it's a flower\"]"], ["description", "Has blue leafs."], ["created_at", "2018-01-30 21:42:46.631231"], ["updated_at", "2018-01-30 21:42:46.631231"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "sightings" ("flower_id", "user_id", "name", "description", "latitude", "longitude", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["flower_id", 103], ["user_id", 82], ["name", "Emily Dach"], ["description", "Under the rainbox."], ["latitude", 14.0], ["longitude", 5.123456], ["created_at", "2018-01-30 21:42:46.634127"], ["updated_at", "2018-01-30 21:42:46.634127"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 82]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "flowers" SET "sightings_count" = COALESCE("sightings_count", 0) + 1 WHERE "flowers"."id" = $1[0m  [["id", 103]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::SightingsController#destroy as HTML
+  Parameters: {"id"=>"42"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authenticate_api_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simone_lehner@bechtelar.co"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "simone_lehner@bechtelar.co"], ["encrypted_password", "$2a$04$cWDo0LhnhIX6Tz/3FXPH2.0zFTt.PT2c4AQYi54Te6R2oFh/jkAWe"], ["created_at", "2018-01-30 21:42:46.647428"], ["updated_at", "2018-01-30 21:42:46.647428"], ["first_name", "Maud"], ["last_name", "Greenholt"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.55ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "lilly.stoltenberg@gulgowski.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "date_of_birth") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "lilly.stoltenberg@gulgowski.com"], ["encrypted_password", "$2a$04$gW2DMjXtN3AGhzswXIngR.lzvD1HoR9w.xJV6WLDcfM3zNCWBZrWy"], ["created_at", "2018-01-30 21:42:46.664506"], ["updated_at", "2018-01-30 21:42:46.664506"], ["first_name", "Jackie"], ["last_name", "Cartwright"], ["date_of_birth", "1980-01-01 00:00:00"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Api::V1::UsersController#update as HTML
+  Parameters: {"first_name"=>"Mike", "id"=>"me"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authenticate_api_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m

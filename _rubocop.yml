@@ -1,0 +1,122 @@
+AllCops:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'lib/tasks/**/*.rake'
+    - 'db/schema.rb'
+    - 'config/**/*.rb'
+    - 'bin/**/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'app/admin/**/*.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Guardfile'
+    - 'app/admin/**/*.rb'
+    - 'config/routes.rb'
+    - 'spec/**/*.rb'
+    - 'lib/tasks/**/*.rake'
+    - 'db/seeds.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'db/seeds.rb'
+
+Metrics/LineLength:
+  Max: 95
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'db/seeds.rb'
+
+MethodLength:
+  Max: 35
+
+Metrics/AbcSize:
+   Enabled: false
+
+BlockLength:
+  Max: 70
+
+Layout/EmptyLines:
+  Enabled: false
+
+Style/SymbolArray:
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'db/seeds.rb'
+    - 'config/routes.rb'
+    - 'app/**/*.rb'
+
+Style/StringLiterals:
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'db/seeds.rb'
+    - 'config/routes.rb'
+    - 'Gemfile'
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Security/JSONLoad:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/TrailingWhitespace:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Layout/IndentHash:
+  Enabled: false
+
+Layout/MultilineHashBraceLayout:
+  Enabled: false
+
+Layout/AlignParameters:
+  Enabled: false
+
+Layout/AlignHash:
+  Enabled: false
+
+Layout/AlignArray:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Layout/DotPosition:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Lint/RescueException:
+  Enabled: false
