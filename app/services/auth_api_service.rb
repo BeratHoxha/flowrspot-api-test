@@ -1,5 +1,4 @@
 class AuthApiService
-
   attr_reader :headers, :errors
 
   def initialize(headers = {})
