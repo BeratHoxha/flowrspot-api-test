@@ -14,11 +14,15 @@ class AuthApiService
   private
 
   def user
-    # valid or invalid ?
+    payload = decoded_auth_token
+    payload ? User.find_by_id(payload['user']['user_id']) : nil
   end
 
   def decoded_auth_token
-    # JsonWebToken
+    http_auth_header ? JsonWebToken.decode(http_auth_header) : nil
+
+    rescue JWT::DecodeError
+      errors[:token] = 'Invalid token'
   end
 
   def http_auth_header
