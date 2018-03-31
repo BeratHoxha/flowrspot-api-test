@@ -26,15 +26,16 @@ Rails.application.routes.draw do
         resources :comments, only: %i[index create destroy], controller: 'sightings/comments'
       end
 
-
-      resources :flowers, only: [:index, :show] do
+      resources :flowers, only: %i[index show create] do
         collection do
           get :search, to: 'flowers#search'
         end
-        resources :sightings, only: [:index], controller: 'flowers/sightings'
         resources :images, only: [:index]
+        resources :sightings, only: [:index], controller: 'flowers/sightings'
+        resources :favourites, only: [:create], controller: 'flowers/favourites'
       end
 
+      resources :favourites, only: [:index]
     end
   end
 
