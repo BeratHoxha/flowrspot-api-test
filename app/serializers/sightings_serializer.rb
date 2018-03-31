@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class SightingsSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :picture, :likes_count, :comments_count
+  attributes :id, :name, :description, :picture, :likes_count, :comments_count,
+             :latitude, :longitude
 
   belongs_to :user, serializer: SightingsUserSerializer
 

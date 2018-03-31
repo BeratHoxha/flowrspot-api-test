@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: sightings
@@ -26,6 +28,8 @@ class SightingSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :picture, :likes_count, :comments_count
 
   belongs_to :user, serializer: SightingsUserSerializer
+  has_many :likes, serializer: LikeSerializer
+  has_many :comments, serializer: CommentSerializer
 
   def picture
     object.picture.url(:medium)
