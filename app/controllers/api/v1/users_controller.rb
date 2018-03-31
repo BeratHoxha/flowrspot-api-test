@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::UsersController < Api::V1::BaseController
   skip_before_action :authenticate_api_user, only: [:show]
 
@@ -18,6 +20,6 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def user_params
     params.permit(:first_name, :last_name, :password, :password_confirmation,
-      :profile_picture, :date_of_birth)
+                  :profile_picture, :date_of_birth)
   end
 end

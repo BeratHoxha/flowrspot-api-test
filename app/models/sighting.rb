@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: sightings
@@ -27,6 +29,8 @@ class Sighting < ApplicationRecord
   belongs_to :flower, counter_cache: true
 
   has_many :images, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
   validates :user, presence: true
@@ -36,9 +40,13 @@ class Sighting < ApplicationRecord
   validates :latitude, presence: true
   validates :longitude, presence: true
 
+  def like?(current_user)
+    likes.where(user: current_user).count.positive?
+  end
+
   has_attached_file :picture,
-    styles: { medium: '300x300>', thumb: '100x100>' },
-    default_url: '/images/:style/missing.png'
+                    styles: { medium: '300x300>', thumb: '100x100>' },
+                    default_url: '/images/:style/missing.png'
   validates_attachment_content_type :picture,
-    content_type: /\Aimage\/.*\z/
+                                    content_type: /\Aimage\/.*\z/
 end

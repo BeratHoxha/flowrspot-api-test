@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -38,12 +40,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_attached_file :profile_picture,
-   styles: { medium: '300x300>', thumb: '100x100>' },
-   default_url: '/images/:style/missing.png'
+                    styles: { medium: '300x300>', thumb: '100x100>' },
+                    default_url: '/images/:style/missing.png'
   validates_attachment_content_type :profile_picture,
-   content_type: /\Aimage\/.*\z/
+                                    content_type: /\Aimage\/.*\z/
 
   has_many :sightings
+  has_many :comments
+  has_many :likes
+
+  has_many :favourites
+  has_many :favourite_flowers, through: :favourites,
+                               source: :flower, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

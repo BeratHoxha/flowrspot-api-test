@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
-
   describe 'show' do
     it 'should return user info' do
       user = create(:user)
       get :show, params: { id: user.id }
       expect(response.status).to eq(200)
-      result = JSON.load(response.body)
+      result = JSON.parse(response.body)
       expect(result['user']['id']).to eq(user.id)
     end
   end
@@ -24,9 +25,8 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       request.headers['Authorization'] = user.to_jwt
       put :update, params: user_params
       expect(response.status).to eq(200)
-      result = JSON.load(response.body)
+      result = JSON.parse(response.body)
       expect(result['user']['first_name']).to eq('Mike')
     end
   end
-
 end
