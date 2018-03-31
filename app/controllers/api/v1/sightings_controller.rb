@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class Api::V1::SightingsController < Api::V1::BaseController
-  skip_before_action :authenticate_api_user, only: [:index, :show]
+  skip_before_action :authenticate_api_user, only: %i[index show]
 
   def index
-    @sightings = Sighting.page(params[:page]).per(params[:per_page])
+    @sightings = Sighting.includes(:user).page(params[:page]).per(params[:per_page])
     render json: @sightings,
-      root: :sightings,
-      meta: generate_pagination(@sightings),
-      each_serializer: SightingsSerializer
+           root: :sightings,
+           meta: generate_pagination(@sightings),
+           each_serializer: SightingsSerializer
   end
 
   def show
@@ -16,6 +18,8 @@ class Api::V1::SightingsController < Api::V1::BaseController
 
   def create
     @sighting = Sighting.new(sighting_params)
+    @sighting.user_id = @current_user.id
+
     if @sighting.save
       render json: @sighting, serializer: SightingSerializer
     else
@@ -43,6 +47,6 @@ class Api::V1::SightingsController < Api::V1::BaseController
 
   def sighting_params
     params.permit(:flower_id, :user_id, :name, :description, :latitude,
-      :longitude, :picture)
+                  :longitude, :picture)
   end
 end
