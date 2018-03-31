@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AuthApiService
   attr_reader :headers, :errors
 
@@ -19,9 +21,8 @@ class AuthApiService
 
   def decoded_auth_token
     http_auth_header ? JsonWebToken.decode(http_auth_header) : nil
-
-    rescue JWT::DecodeError
-      errors[:token] = 'Invalid token'
+  rescue JWT::DecodeError
+    errors[:token] = 'Invalid token'
   end
 
   def http_auth_header

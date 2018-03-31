@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: sightings
@@ -27,7 +29,7 @@ FactoryGirl.define do
     name { Faker::Name.name }
     user { create(:user) }
     flower { create(:flower) }
-    description { 'Under the rainbox.'}
+    description { 'Under the rainbox.' }
     latitude { 14.0 }
     longitude { 5.123456 }
   end

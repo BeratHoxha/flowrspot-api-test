@@ -1,5 +1,6 @@
-namespace :flower do
+# frozen_string_literal: true
 
+namespace :flower do
   desc 'import flowers'
   task import: :environment do
     path = Rails.root.join('db', 'seeds', 'flowers.csv')
@@ -9,10 +10,7 @@ namespace :flower do
       f.latin_name = row['latin_name']
       f.features = row['features']
       f.description = row['description']
-      unless f.save
-        puts f.errors.full_messages
-      end
+      puts f.errors.full_messages unless f.save
     end
   end
-
 end

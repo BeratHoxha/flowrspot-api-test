@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Api::V1::RegistrationsController, type: :controller do
-
   describe 'create' do
     context 'given inputs are valid' do
       it 'should return jwt token' do
@@ -15,7 +16,7 @@ RSpec.describe Api::V1::RegistrationsController, type: :controller do
 
         post :create, params: user_params
         expect(response.status).to eq(200)
-        result = JSON.load(response.body)
+        result = JSON.parse(response.body)
         expect(result['auth_token']).not_to be_nil
       end
     end
@@ -32,10 +33,9 @@ RSpec.describe Api::V1::RegistrationsController, type: :controller do
 
         post :create, params: user_params
         expect(response.status).to eq(400)
-        result = JSON.load(response.body)
+        result = JSON.parse(response.body)
         expect(result['auth_token']).to be_nil
       end
     end
   end
-
 end

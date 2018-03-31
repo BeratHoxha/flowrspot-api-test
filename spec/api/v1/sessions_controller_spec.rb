@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Api::V1::SessionsController, type: :controller do
-
   describe 'create' do
     context 'given user exists' do
       it 'should return jwt token' do

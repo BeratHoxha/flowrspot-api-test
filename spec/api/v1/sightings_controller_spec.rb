@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Api::V1::SightingsController, type: :controller do
-
   describe 'index' do
     it 'should return latest sightings' do
       user = create(:user)
@@ -11,7 +12,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
 
       get :index
       expect(response.status).to eq(200)
-      results = JSON.load(response.body)
+      results = JSON.parse(response.body)
       expect(results['sightings'].count).to eq(2)
     end
   end
@@ -24,7 +25,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
 
       get :show, params: { id: sighting.id }
       expect(response.status).to eq(200)
-      result = JSON.load(response.body)
+      result = JSON.parse(response.body)
       expect(result['sighting']['id']).to eq(sighting.id)
     end
   end
@@ -45,7 +46,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       request.headers['Authorization'] = user.to_jwt
       post :create, params: sighting_params
       expect(response.status).to eq(200)
-      result = JSON.load(response.body)
+      result = JSON.parse(response.body)
       expect(result['sighting']['name']).to eq(sighting_params[:name])
     end
   end
@@ -68,7 +69,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       request.headers['Authorization'] = user.to_jwt
       put :update, params: sighting_params
       expect(response.status).to eq(200)
-      result = JSON.load(response.body)
+      result = JSON.parse(response.body)
       expect(result['sighting']['name']).to eq('Apix')
     end
 
@@ -78,7 +79,7 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       sighting = create(:sighting)
 
       sighting_params = {
-        id: sighting.id,
+        id: sighting.id * -1,
         flower_id: flower.id,
         name: 'Apix',
         description: 'Mijav',
@@ -102,5 +103,4 @@ RSpec.describe Api::V1::SightingsController, type: :controller do
       expect(response.status).to eq(200)
     end
   end
-
 end
