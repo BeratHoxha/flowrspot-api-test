@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -17,15 +19,19 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :sightings, except: [:edit, :new] do
-        resources :images, only: [:index, :create, :destroy],
+      resources :sightings, except: %i[edit new] do
+        resources :images, only: %i[index create destroy],
                            controller: 'sightings/images'
+        resources :likes, only: %i[index create destroy], controller: 'sightings/likes'
+        resources :comments, only: %i[index create destroy], controller: 'sightings/comments'
       end
+
 
       resources :flowers, only: [:index, :show] do
         collection do
           get :search, to: 'flowers#search'
         end
+        resources :sightings, only: [:index], controller: 'flowers/sightings'
         resources :images, only: [:index]
       end
 
