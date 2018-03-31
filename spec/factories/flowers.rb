@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: flowers
@@ -22,9 +24,9 @@
 
 FactoryGirl.define do
   factory :flower do
-    name { Faker::Name.name }
-    latin_name { Faker::Lorem.word }
-    features { ["it's a flower"] }
     description { 'Has blue leafs.' }
+    name { 'A flower' }
+    latin_name { 'Latin name' }
+    features { ["it's a flower"] }
   end
 end
