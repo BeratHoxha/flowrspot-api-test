@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::Flowers::BaseController < Api::V1::BaseController
   before_action :set_flower
 
@@ -6,5 +8,4 @@ class Api::V1::Flowers::BaseController < Api::V1::BaseController
   def set_flower
     @flower = Flower.find params[:flower_id] || params[:id]
   end
-
 end

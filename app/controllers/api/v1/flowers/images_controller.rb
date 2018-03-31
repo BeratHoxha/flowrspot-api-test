@@ -1,5 +1,6 @@
-class Api::V1::Flowers::ImagesController < Api::V1::Flowers::BaseController
+# frozen_string_literal: true
 
+class Api::V1::Flowers::ImagesController < Api::V1::Flowers::BaseController
   def index
     @images = @flower.images.page(params[:page]).per(params[:per_page])
     render json: @images,
@@ -7,5 +8,4 @@ class Api::V1::Flowers::ImagesController < Api::V1::Flowers::BaseController
            meta: generate_pagination(@images),
            each_serializer: ImageSerializer
   end
-
 end
